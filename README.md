@@ -102,7 +102,7 @@ You can find configuration files under `config`. The format of the JSON structur
     }
 }
 ```
-I encourage you to modify the settings to suit your own needs based on your image perferences and workload distribution. You can look at other available [ffmpeg video encoders](https://www.ffmpeg.org/ffmpeg-codecs.html#Video-Encoders) and see available [waifu2x-caffe-cui options](docs/waifu2x-caffe-cui.md).
+I encourage you to modify the settings to suit your own needs based on your image perferences and workload distribution. You can look at other available [ffmpeg video encoders](https://www.ffmpeg.org/ffmpeg-codecs.html#Video-Encoders) and see available [waifu2x-caffe-cui options](https://github.com/kwsou/video2x/blob/master/docs/waifu2x-caffe-cui.md).
 
 ## Running the executable
 * Open a command prompt and `cd` where the executable is located
