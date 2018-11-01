@@ -1,0 +1,39 @@
+{
+  "name": "video2x",
+  "version": "1.0.0",
+  "description": "Video upscaler using popular upscaling algorithm waifu2x to magnify and denoise artifacts from low resolution videos",
+  "main": "app.js",
+  "bin": "./app.js",
+  "dependencies": {
+    "ffmpeg": "^0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs-extra": "^5.0.0",
+    "minimist": "^1.2.0",
+    "printf": "^0.5.1",
+    "q": "^1.5.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-move": "^0.1.5",
+    "grunt-textfile": "^0.2.0"
+  },
+  "scripts": {
+    "test": "node app.js -c \"./config/default.js\""
+  },
+  "pkg": {
+    "script": [
+      "lib/*.js"
+    ],
+    "assets": [],
+    "targets": [
+      "win"
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}

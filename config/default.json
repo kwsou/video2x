@@ -1,0 +1,91 @@
+{
+    "workDirectory": "temp",
+    "width": 1920,
+    "height": 1080,
+    "ffmpeg": {
+        "encoderLib": "libx264",
+        "encodingOptions": {
+            "libx264": [
+                {
+                    "flag": "-preset",
+                    "value": "slow"
+                },
+                {
+                    "flag": "-crf",
+                    "value": 22
+                },
+                {
+                    "flag": "-pix_fmt",
+                    "value": "yuv420p"
+                }
+            ]
+        }
+    },
+    "waifu2x": {
+        "executablePath": "waifu2x-caffe-cui.exe",
+        "COMMON_PRESET": [
+            {
+                "flag": "-e",
+                "value": "png"
+            },
+            {
+                "flag": "-m",
+                "value": "noise_scale"
+            },
+            {
+                "flag": "-n",
+                "value": 1
+            },
+            {
+                "flag": "-t",
+                "value": 0
+            }
+        ],
+        "CPU_PRESET": [],
+        "GPU_PRESET": [
+            {
+                "flag": "-p",
+                "value": "gpu"
+            },
+            {
+                "flag": "--gpu",
+                "value": 0
+            },
+            {
+                "flag": "-b",
+                "value": 5
+            },
+            {
+                "flag": "-c",
+                "value": 128
+            }
+        ],
+        "threads": [
+            {
+                "type": "gpu",
+                "weight": 0.5,
+                "preset": "GPU_PRESET"
+            },
+            {
+                "type": "cpu",
+                "weight": 0.125,
+                "preset": "CPU_PRESET"
+            },
+            {
+                "type": "cpu",
+                "weight": 0.125,
+                "preset": "CPU_PRESET"
+            },
+            {
+                "type": "cpu",
+                "weight": 0.125,
+                "preset": "CPU_PRESET"
+            },
+            {
+                "type": "cpu",
+                "weight": 0.125,
+                "preset": "CPU_PRESET"
+            }
+        ]
+    }
+}
