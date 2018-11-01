@@ -14,16 +14,22 @@ This is a very process intensive task, so expect to take quite a while (and enou
 1. Encoded as H264 (preset=slow, crt=18) and Waifu2x (Magnify and denoise, level 1):
 
 ![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample1.png)
+[imgur](https://i.imgur.com/exnm6ER.jpg)
 
 ![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample2.png)
+[imgur](https://i.imgur.com/5iaVGIH.jpg)
 
 ![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample3.png)
+[imgur](https://i.imgur.com/LSqJgKg.jpg)
 
 ![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample4.png)
+[imgur](https://i.imgur.com/Tg3Qck4.jpg)
 
 ![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample5.png)
+[imgur](https://i.imgur.com/PJJxUSv.jpg)
 
 ![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample6.png)
+[imgur](https://i.imgur.com/nbIz6FS.jpg)
 
 ## Requirements
 1. [FFmpeg](https://www.ffmpeg.org/). Add the path to the ffmpeg executable into your PATH environment. [Here's instructions on how to do this](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg)
