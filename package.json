@@ -22,6 +22,11 @@
     "grunt-move": "^0.1.5",
     "grunt-textfile": "^0.2.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwsou/video2x.git"
+  },
+  "homepage": "https://github.com/kwsou/video2x/releases",
   "scripts": {
     "test": "node app.js -c \"./config/default.js\""
   },
