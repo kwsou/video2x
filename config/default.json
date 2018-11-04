@@ -41,7 +41,12 @@
                 "value": 0
             }
         ],
-        "CPU_PRESET": [],
+        "CPU_PRESET": [
+            {
+                "flag": "-p",
+                "value": "cpu"
+            }
+        ],
         "GPU_PRESET": [
             {
                 "flag": "-p",
