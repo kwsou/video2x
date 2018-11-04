@@ -41,7 +41,12 @@
                 "value": 0
             }
         ],
-        "CPU_PRESET": [],
+        "CPU_PRESET": [
+            {
+                "flag": "-p",
+                "value": "cpu"
+            }
+        ],
         "GPU_PRESET": [
             {
                 "flag": "-p",
@@ -67,24 +72,9 @@
                 "preset": "GPU_PRESET"
             },
             {
-                "type": "cpu",
-                "weight": 0.125,
-                "preset": "CPU_PRESET"
-            },
-            {
-                "type": "cpu",
-                "weight": 0.125,
-                "preset": "CPU_PRESET"
-            },
-            {
-                "type": "cpu",
-                "weight": 0.125,
-                "preset": "CPU_PRESET"
-            },
-            {
-                "type": "cpu",
-                "weight": 0.125,
-                "preset": "CPU_PRESET"
+                "type": "gpu",
+                "weight": 0.5,
+                "preset": "GPU_PRESET"
             }
         ]
     }
