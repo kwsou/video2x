@@ -1,6 +1,6 @@
 {
   "name": "video2x",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Video upscaler using popular upscaling algorithm waifu2x to magnify and denoise artifacts from low resolution videos",
   "main": "app.js",
   "bin": "./app.js",

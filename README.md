@@ -1,7 +1,7 @@
 # Video2x
 This tool upscales smaller resolution videoes to a higher resolution based on the [Waifu2x](https://github.com/nagadomi/waifu2x) art upscaler algorithm. It is based off of an [existing python project](https://github.com/K4YT3X/video2x) using the same core principles to perform the video upscale, but with additional functionality to provide less verbouse output and hopefully more meaningful output. It's built to be flexible in terms of what options you pass into either the video encoder (ffmpeg) or the upscaler (waifu2x).
 
-Get latest release [here](https://github.com/kwsou/video2x/releases).
+This project is in github! You can find the page [here](https://github.com/kwsou/video2x). You can also grab the latest release [here](https://github.com/kwsou/video2x/releases).
 
 ## How it works
 1. Extract every frame in the source video.
@@ -10,26 +10,8 @@ Get latest release [here](https://github.com/kwsou/video2x/releases).
 
 This is a very process intensive task, so expect to take quite a while (and enough disk space).
 
-## Image comparisons (left side = upscaled, right side = original)
-1. Encoded as H264 (preset=slow, crt=18) and Waifu2x (Magnify and denoise, level 1):
-
-![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample1.png)
-[imgur](https://i.imgur.com/exnm6ER.jpg)
-
-![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample2.png)
-[imgur](https://i.imgur.com/5iaVGIH.jpg)
-
-![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample3.png)
-[imgur](https://i.imgur.com/LSqJgKg.jpg)
-
-![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample4.png)
-[imgur](https://i.imgur.com/Tg3Qck4.jpg)
-
-![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample5.png)
-[imgur](https://i.imgur.com/PJJxUSv.jpg)
-
-![screenshot](https://github.com/kwsou/video2x/blob/master/image-comparisons/sample6.png)
-[imgur](https://i.imgur.com/nbIz6FS.jpg)
+## Image comparisons
+Visit this [link](https://kam-sb.ddns.net/video2x/image-comparison/) to see my compiled list of screenshot comparisons.
 
 ## Requirements
 1. [FFmpeg](https://www.ffmpeg.org/). Add the path to the ffmpeg executable into your PATH environment. [Here's instructions on how to do this](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg)
@@ -49,6 +31,10 @@ You can find configuration files under `config`. The format of the JSON structur
 
     // ffmpeg video encoding (repack to new video) settings
     "ffmpeg": {
+
+        // number of threads ffmpeg will run on, 0 defaults to having it use all of your cpu
+        // recommended to run #cpu cores - 1 or 2 to avoid having cpu usage spike up to 100%
+        "numThreads": 2,
 
         // if you want to use a different encoding library, change this
         "encoderLib": "libx264",
@@ -108,7 +94,7 @@ You can find configuration files under `config`. The format of the JSON structur
     }
 }
 ```
-I encourage you to modify the settings to suit your own needs based on your image perferences and workload distribution. You can look at other available [ffmpeg video encoders](https://www.ffmpeg.org/ffmpeg-codecs.html#Video-Encoders) and see available [waifu2x-caffe-cui options](https://github.com/kwsou/video2x/blob/master/docs/waifu2x-caffe-cui.md).
+I encourage you to modify the settings to suit your own needs based on your image perferences and workload distribution. I've included some short sample videos under `test-vids`. You can look at other available [ffmpeg video encoders](https://www.ffmpeg.org/ffmpeg-codecs.html#Video-Encoders) and see available [waifu2x-caffe-cui options](https://github.com/kwsou/video2x/blob/master/docs/waifu2x-caffe-cui.md).
 
 ## Running the executable
 * Open a command prompt and `cd` where the executable is located
