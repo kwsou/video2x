@@ -68,7 +68,7 @@ var start = function(config) {
             var d = Q.defer();
 
             var startTime = Date.now();
-            utils.extractPNGFromSourceVideo(config.input, EXTRACTED_FRAMES_DIRECTORY, FRAME_FILE_PATTERN).then(function() {
+            utils.extractPNGFromSourceVideo(config.ffmpeg, config.input, EXTRACTED_FRAMES_DIRECTORY, FRAME_FILE_PATTERN).then(function() {
                 // show statistics
                 utils.getDirectorySize(EXTRACTED_FRAMES_DIRECTORY).then(function(dirInfo) {
                     originalFrameSize = dirInfo.totalSize / (1024 * 1024 * 1024);

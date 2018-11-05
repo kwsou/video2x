@@ -3,6 +3,7 @@
     "width": 1920,
     "height": 1080,
     "ffmpeg": {
+        "numThreads": 0,
         "encoderLib": "libx264",
         "encodingOptions": {
             "libx264": [
