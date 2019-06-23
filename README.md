@@ -11,7 +11,7 @@ This project is in github! You can find the page [here](https://github.com/kwsou
 This is a very process intensive task, so expect to take quite a while (and enough disk space).
 
 ## Image comparisons
-Visit this [link](https://kam-sb.ddns.net/video2x/image-comparison/) to see my compiled list of screenshot comparisons.
+Visit this [link](https://video2x.kwsou.com/image-comparison/) to see my compiled list of screenshot comparisons.
 
 ## Requirements
 1. [FFmpeg](https://www.ffmpeg.org/). Add the path to the ffmpeg executable into your PATH environment. [Here's instructions on how to do this](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg)
