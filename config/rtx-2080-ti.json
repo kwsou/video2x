@@ -1,7 +1,7 @@
 {
     "workDirectory": "temp",
     "width": 1920,
-    "height": 1080,
+    "height": 1440,
     "ffmpeg": {
         "numThreads": 0,
         "encoderLib": "libx264",
@@ -13,7 +13,7 @@
                 },
                 {
                     "flag": "-crf",
-                    "value": 22
+                    "value": 19
                 },
                 {
                     "flag": "-pix_fmt",
@@ -36,23 +36,17 @@
             },
             {
                 "flag": "-n",
-                "value": 1
+                "value": 2
             },
             {
                 "flag": "-t",
                 "value": 0
             }
         ],
-        "CPU_PRESET": [
+        "CUDNN_PRESET": [
             {
                 "flag": "-p",
-                "value": "cpu"
-            }
-        ],
-        "GPU_PRESET": [
-            {
-                "flag": "-p",
-                "value": "gpu"
+                "value": "cudnn"
             },
             {
                 "flag": "--gpu",
@@ -60,23 +54,18 @@
             },
             {
                 "flag": "-b",
-                "value": 1
+                "value": 32
             },
             {
                 "flag": "-c",
-                "value": 8
+                "value": 128
             }
         ],
         "threads": [
             {
-                "type": "cpu",
-                "weight": 0.5,
-                "preset": "CPU_PRESET"
-            },
-            {
-                "type": "gpu",
-                "weight": 0.5,
-                "preset": "GPU_PRESET"
+                "type": "cuDNN",
+                "weight": 1,
+                "preset": "CUDNN_PRESET"
             }
         ]
     }

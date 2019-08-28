@@ -108,7 +108,7 @@ var start = function(config) {
                     }
                     currFrameIndex += totalFramesHandled;
     
-                    var newWaifu2xThread = utils.spawnWaifu2x(threadNum, config.waifu2x.executablePath, config.waifu2x[currThread.preset].concat(config.waifu2x.COMMON_PRESET), config.width, config.height, currThreadWorkspace, UPSCALED_FRAMES_DIRECTORY);
+                    var newWaifu2xThread = utils.spawnWaifu2x(threadNum, config.waifu2x.directory, config.waifu2x[currThread.preset].concat(config.waifu2x.COMMON_PRESET), config.width, config.height, currThreadWorkspace, UPSCALED_FRAMES_DIRECTORY, config.waifu2x.model);
                     newWaifu2xThread.done(function(threadId) {
                         cutils.stepComment(printf('[Thread%i] Completed in %0.2f hours (approx. %0.0f minutes)', threadId, utils.timeDiffHrs(startTime), utils.timeDiffMins(startTime)));
                     });

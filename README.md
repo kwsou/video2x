@@ -11,12 +11,25 @@ This project is in github! You can find the page [here](https://github.com/kwsou
 This is a very process intensive task, so expect to take quite a while (and enough disk space).
 
 ## Image comparisons
-Visit this [link](https://kam-sb.ddns.net/video2x/image-comparison/) to see my compiled list of screenshot comparisons.
+Visit this [link](https://video2x.kwsou.com/image-comparison/) to see my compiled list of screenshot comparisons.
 
 ## Requirements
 1. [FFmpeg](https://www.ffmpeg.org/). Add the path to the ffmpeg executable into your PATH environment. [Here's instructions on how to do this](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg)
 2. Windows executable of the waifu2x tool, [waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe).
 3. [Nodejs](https://nodejs.org/en/) (Optional, only needed if you want to build from source)
+
+## Optional
+1. I highly recommend the [NVIDIA CUDA Deep Neural Network](https://developer.nvidia.com/cudnn) (cuDNN) library when using waifu2x-caffe. This is a high-speed machine learning library that **can only be used with NVIDIA GPUs**. Compared to using your cpu or gpu (via CUDA) to upscale images, cuDNN offers the following advantages:
+
+    - Depending on the type of GPU used, images can be converted faster (exponentially faster in my experience)
+    - VRAM usage can be reduced
+
+    Due to licensing issues, waifu2x-caffe does not include this library by default. Here are instructions on how to obtain this library and have waifu2x-caffe use it:
+    - Visit the link above to download the cuDNN binary for Windows x64. (You would need to register as a developer in order to download first).
+    - Prevent any potential permissions issue by unblocking the downloaded binary zip
+    - Copy `cuda/bin/cudnn67_7.dll` to where you put waifu2x-caffe.
+    - Run `waifu2x-caffe.exe` and click on the `Check cuDNN` button to ensure that waifu2x can use the cuDNN library.
+
 
 ## Configuration
 You can find configuration files under `config`. The format of the JSON structure is as follows:
@@ -50,19 +63,23 @@ You can find configuration files under `config`. The format of the JSON structur
     // waifu2x upscaler options
     "waifu2x": {
 
-        // full path of the waifu2x-caffe-cui executable
-        "executablePath": "waifu2x-caffe-cui.exe",
+        // full path of waifu2x-caffe executable
+        "directory": "C:/dev/tools/waifu2x-caffe",
 
-        // you can run waifu2x-caffe-cui in either CPU or GPU mode, this contains common options for both
+        // the model to use. This is a folder path from the base directory above
+        "model": "models/anime_style_art",
+
+        // you can run waifu2x-caffe-cui in CPU, GPU, or CUDNN mode, this contains common options for all modes
         "COMMON_PRESET": [
             ...
         ],
 
-        // specific options for CPU/GPU mode
+        // specific mode options
         "CPU_PRESET": [ ... ],
         "GPU_PRESET": [ ... ],
+        "CUDNN_PRESET": [ ... ],
 
-        // Work distribution. You can define as many threads as your PC can support. (ex. for 4 cores + 1 gpu)
+        // Work distribution. You can define as many threads as your PC can support. (ex. for 4 CPU cores + 1 gpu CUDA)
         "threads": [
             {
                 "type": "gpu",
@@ -94,7 +111,7 @@ You can find configuration files under `config`. The format of the JSON structur
     }
 }
 ```
-I encourage you to modify the settings to suit your own needs based on your image perferences and workload distribution. I've included some short sample videos under `test-vids`. You can look at other available [ffmpeg video encoders](https://www.ffmpeg.org/ffmpeg-codecs.html#Video-Encoders) and see available [waifu2x-caffe-cui options](https://github.com/kwsou/video2x/blob/master/docs/waifu2x-caffe-cui.md).
+I encourage you to modify the settings to suit your own needs based on your image perferences and workload distribution. I've included some short sample videos under `test-vids`. You can look at other available [ffmpeg video encoders](https://www.ffmpeg.org/ffmpeg-codecs.html#Video-Encoders) and see available [waifu2x-caffe-cui options](https://github.com/kwsou/video2x/blob/master/docs/waifu2x-caffe-cui.md). For reference, I've included my configuration in `config/rtx-2080-ti.json`. Using the cuDNN library, only one cudnn thread is used as it is faster than the other modes.
 
 ## Running the executable
 * Open a command prompt and `cd` where the executable is located
