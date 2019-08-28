@@ -28,7 +28,7 @@ Visit this [link](https://video2x.kwsou.com/image-comparison/) to see my compile
     
 	- Visit the link above to download the cuDNN binary for Windows x64. (You would need to register as a developer in order to download first).
     - Prevent any potential permissions issue by unblocking the downloaded binary zip
-    - Copy `cuda/bin/cudnn67_7.dll` to where you put waifu2x-caffe.
+    - Copy `cuda/bin/cudnn64_7.dll` to where you put waifu2x-caffe.
     - Run `waifu2x-caffe.exe` and click on the `Check cuDNN` button to ensure that waifu2x can use the cuDNN library.
 
 
