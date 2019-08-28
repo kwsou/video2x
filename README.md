@@ -25,7 +25,8 @@ Visit this [link](https://video2x.kwsou.com/image-comparison/) to see my compile
     - VRAM usage can be reduced
 
     Due to licensing issues, waifu2x-caffe does not include this library by default. Here are instructions on how to obtain this library and have waifu2x-caffe use it:
-    - Visit the link above to download the cuDNN binary for Windows x64. (You would need to register as a developer in order to download first).
+    
+	- Visit the link above to download the cuDNN binary for Windows x64. (You would need to register as a developer in order to download first).
     - Prevent any potential permissions issue by unblocking the downloaded binary zip
     - Copy `cuda/bin/cudnn67_7.dll` to where you put waifu2x-caffe.
     - Run `waifu2x-caffe.exe` and click on the `Check cuDNN` button to ensure that waifu2x can use the cuDNN library.
@@ -111,7 +112,9 @@ You can find configuration files under `config`. The format of the JSON structur
     }
 }
 ```
-I encourage you to modify the settings to suit your own needs based on your image perferences and workload distribution. I've included some short sample videos under `test-vids`. You can look at other available [ffmpeg video encoders](https://www.ffmpeg.org/ffmpeg-codecs.html#Video-Encoders) and see available [waifu2x-caffe-cui options](https://github.com/kwsou/video2x/blob/master/docs/waifu2x-caffe-cui.md). For reference, I've included my configuration in `config/rtx-2080-ti.json`. Using the cuDNN library, only one cudnn thread is used as it is faster than the other modes.
+I encourage you to modify the settings to suit your own needs based on your image perferences and workload distribution. I've included some short sample videos under `test-vids`. You can look at other available [ffmpeg video encoders](https://www.ffmpeg.org/ffmpeg-codecs.html#Video-Encoders) and see available [waifu2x-caffe-cui options](https://github.com/kwsou/video2x/blob/master/docs/waifu2x-caffe-cui.md).
+
+For reference, I've included my configuration in `config/rtx-2080-ti.json`. Using the cuDNN library, only one cudnn thread is used as it is faster than the other modes.
 
 ## Running the executable
 * Open a command prompt and `cd` where the executable is located
@@ -170,6 +173,7 @@ Building from source (Optional)
 ===
 If you don't care about modifying the code and/or building your own executable from the source, skip the section below.
 ## Setup (dev)
+
 * Obtain a copy of the source
 * Open a terminal and `cd` into the source
 * Run `npm install` to obtain node dependencies
@@ -177,6 +181,7 @@ If you don't care about modifying the code and/or building your own executable f
 
 ## Build (dev)
 If you want to compile the source yourself to form a standalone executable, do the following:
+
 * Install pkg by running `npm install -g pkg`
 * Install grunt by running `npm install -g grunt`
 * Grunt tasks are setup already without needing you to configure anything. Build the project by running `grunt`
