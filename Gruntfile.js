@@ -47,7 +47,7 @@ module.exports = function(grunt) {
             main: {
                 files: [
                     // include default config file
-                    { expand: true, src: ['config/default.json'], dest: '<%= build_dir %>/', filter: 'isFile' },
+                    { expand: true, src: ['config/default.json', 'config/rtx-2080-ti.json'], dest: '<%= build_dir %>/', filter: 'isFile' },
 
                     // include test sample videos
                     { expand: true, src: ['testvids/*'], dest: '<%= build_dir %>/', filter: 'isFile' }
