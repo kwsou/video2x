@@ -1,0 +1,72 @@
+{
+    "workDirectory": "temp",
+    "width": 1920,
+    "height": 1440,
+    "ffmpeg": {
+        "numThreads": 0,
+        "encoderLib": "libx264",
+        "encodingOptions": {
+            "libx264": [
+                {
+                    "flag": "-preset",
+                    "value": "slow"
+                },
+                {
+                    "flag": "-crf",
+                    "value": 19
+                },
+                {
+                    "flag": "-pix_fmt",
+                    "value": "yuv420p"
+                }
+            ]
+        }
+    },
+    "waifu2x": {
+        "directory": "C:/dev/tools/waifu2x-caffe",
+        "model": "models/cunet",
+        "COMMON_PRESET": [
+            {
+                "flag": "-e",
+                "value": "png"
+            },
+            {
+                "flag": "-m",
+                "value": "noise_scale"
+            },
+            {
+                "flag": "-n",
+                "value": 2
+            },
+            {
+                "flag": "-t",
+                "value": 0
+            }
+        ],
+        "CUDNN_PRESET": [
+            {
+                "flag": "-p",
+                "value": "cudnn"
+            },
+            {
+                "flag": "--gpu",
+                "value": 0
+            },
+            {
+                "flag": "-b",
+                "value": 8
+            },
+            {
+                "flag": "-c",
+                "value": 92
+            }
+        ],
+        "threads": [
+            {
+                "type": "cuDNN",
+                "weight": 1,
+                "preset": "CUDNN_PRESET"
+            }
+        ]
+    }
+}
